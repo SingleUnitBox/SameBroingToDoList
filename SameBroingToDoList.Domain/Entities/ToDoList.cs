@@ -8,15 +8,16 @@ using System.Threading.Tasks;
 
 namespace SameBroingToDoList.Domain.Entities
 {
-    public class ToDoList : AggregateRoot<ToDoList>
+    public class ToDoList : AggregateRoot<ToDoListId>
     {
         public ToDoListTitle Title { get; set; }
-        public UserId UserId { get; set; }
-        //protected List<ToDoItem> _toDoItems = new List<ToDoList>();
-        //public IReadOnlyList<ToDoItem> ToDoItems = _toDoItems.AsReadOnly();
-        //public ToDoList()
-        //{
-
-        //}
+        public UserId AuthorId { get; set; }
+        protected List<ToDoItem> _toDoItems = new List<ToDoItem>();
+        public IReadOnlyList<ToDoItem> ToDoItems => _toDoItems.AsReadOnly();
+        public ToDoList(ToDoListId id, ToDoListTitle title, UserId authorId) : base(id)
+        {
+            Title = title;
+            AuthorId = authorId;
+        }
     }
 }
