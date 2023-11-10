@@ -8,6 +8,18 @@ namespace SameBroingToDoList.Domain.ValueObject
 {
     public record ToDoItem
     {
-        public ToDoItemTitle MyProperty { get; set; }
+        public ToDoItemTitle Title { get; set; }
+        public ToDoItemDescription Description { get; set; }
+        public bool IsDone { get; set; }
+        public ToDoItem(ToDoItemTitle title, ToDoItemDescription toDoItemDescription, bool isDone)
+        {
+            Title = title;
+            Description = toDoItemDescription;
+            IsDone = isDone;
+        }
+        public void MarkAsDone()
+        {
+            IsDone = true;
+        }
     }
 }

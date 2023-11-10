@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SameBroingToDoList.Infrastructure.Persistance.Repositories
+namespace SameBroingToDoList.Application.DTO
 {
-    public class ToDoListRepository
+    public record ToDoListDto(Guid Id, string Title)
     {
     }
 }

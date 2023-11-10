@@ -16,7 +16,7 @@ namespace SameBroingToDoList.Domain.ValueObject
         {
             Value = value;
         }
-        public Result<ToDoItemDescription> Create(string value)
+        public static Result<ToDoItemDescription> Create(string value)
         {
             if (value.Length > _descriptionMaxLength)
                 return DomainErrors.ToDoItemDescriptionIsTooLong(_descriptionMaxLength);

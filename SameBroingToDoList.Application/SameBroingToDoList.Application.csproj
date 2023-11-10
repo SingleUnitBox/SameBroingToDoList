@@ -11,7 +11,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SameBroingToDoList.Domain\SameBroingToDoList.Domain.csproj" />
     <ProjectReference Include="..\SameBroingToDoList.Shared\SameBroingToDoList.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Authentication\" />
+    <Folder Include="ToDoItems\Commands\" />
+    <Folder Include="Users\" />
   </ItemGroup>
 
 </Project>
